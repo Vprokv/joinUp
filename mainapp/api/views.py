@@ -50,7 +50,7 @@ class AdaptationProgramTestAPIView(APIView):
         return Response(data)
 
     def post(self, request, *args, **kwargs):
-        return Response({"id": 3}, status=status.HTTP_200_OK)
+        return Response({"id_program": 3}, status=status.HTTP_200_OK)
 
     # def put(self, request, *args, **kwargs):
     #     return Response(status=status.HTTP_200_OK)
@@ -87,7 +87,7 @@ class AdaptationLevelTestAPIView(APIView):
         return Response(data)
 
     def post(self, request, *args, **kwargs):
-        return Response({"id": 3}, status=status.HTTP_200_OK)
+        return Response({"id_level": 3}, status=status.HTTP_200_OK)
 
     # def put(self, request, *args, **kwargs):
     #     return Response(status=status.HTTP_200_OK)
@@ -120,13 +120,13 @@ class AdaptationStageTestAPIView(APIView):
                 "status": 2,
                 "create_date": "Sun, 31 Dec 1899 00:00:00 GMT",
                 "create_user": 2,
-                "id_level": [1, 2]
+                "id_level": [3, 4]
             }
         ]
         return Response(data)
 
     def post(self, request, *args, **kwargs):
-        return Response({"id": 3}, status=status.HTTP_200_OK)
+        return Response({"id_stage": 3}, status=status.HTTP_200_OK)
 
     # def put(self, request, *args, **kwargs):
     #     return Response(status=status.HTTP_200_OK)
@@ -140,32 +140,30 @@ class AdaptationBlockTestAPIView(APIView):
     def get(self, request, *args, **kwargs):
         data = [
             {
-                "id_stage": 1,
-                "stage_name": "Общие сведения",
-                "illustration_link": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fru.depositphotos.com%2Fstock-photos%2F%25D1%2580%25D0%25B0%25D0%25B1%25D0%25BE%25D1%2582%25D0%25B0-%25D0%25B2-%25D0%25B8%25D0%25BD%25D1%2582%25D0%25B5%25D1%2580%25D0%25BD%25D0%25B5%25D1%2582%25D0%25B5.html&psig=AOvVaw0MVUI_amjMnc32xcy1SKU2&ust=1638170544123000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCPi34PzCuvQCFQAAAAAdAAAAABAD",
+                "id_block": 1,
+                "block_name": "Общие сведения",
+                "description": "это описание блока программ",
                 "tier": 12,
-                "point": 34,
+                "id_stage": 34,
                 "status": 2,
                 "create_date": "Sun, 31 Dec 1899 00:00:00 GMT",
-                "create_user": 2,
-                "id_level": [1, 2]
+                "create_user": 2
             },
             {
-                "id_stage": 1,
-                "stage_name": "Общие сведения",
-                "illustration_link": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fru.depositphotos.com%2Fstock-photos%2F%25D1%2580%25D0%25B0%25D0%25B1%25D0%25BE%25D1%2582%25D0%25B0-%25D0%25B2-%25D0%25B8%25D0%25BD%25D1%2582%25D0%25B5%25D1%2580%25D0%25BD%25D0%25B5%25D1%2582%25D0%25B5.html&psig=AOvVaw0MVUI_amjMnc32xcy1SKU2&ust=1638170544123000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCPi34PzCuvQCFQAAAAAdAAAAABAD",
+                "id_block": 3,
+                "block_name": "Общие тоже сведения",
+                "description": "это  тоже описание блока программ",
                 "tier": 12,
-                "point": 34,
+                "id_stage": 34,
                 "status": 2,
                 "create_date": "Sun, 31 Dec 1899 00:00:00 GMT",
-                "create_user": 2,
-                "id_level": [1, 2]
+                "create_user": 2
             }
         ]
         return Response(data)
 
     def post(self, request, *args, **kwargs):
-        return Response({"id": 3}, status=status.HTTP_200_OK)
+        return Response({"id_block": 2}, status=status.HTTP_200_OK)
 
     # def put(self, request, *args, **kwargs):
     #     return Response(status=status.HTTP_200_OK)
@@ -179,32 +177,28 @@ class AdaptationGoalTestAPIView(APIView):
     def get(self, request, *args, **kwargs):
         data = [
             {
-                "id_stage": 1,
-                "stage_name": "Общие сведения",
-                "illustration_link": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fru.depositphotos.com%2Fstock-photos%2F%25D1%2580%25D0%25B0%25D0%25B1%25D0%25BE%25D1%2582%25D0%25B0-%25D0%25B2-%25D0%25B8%25D0%25BD%25D1%2582%25D0%25B5%25D1%2580%25D0%25BD%25D0%25B5%25D1%2582%25D0%25B5.html&psig=AOvVaw0MVUI_amjMnc32xcy1SKU2&ust=1638170544123000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCPi34PzCuvQCFQAAAAAdAAAAABAD",
+                "id_goal": 1,
+                "description": "Повышение мотивации",
                 "tier": 12,
-                "point": 34,
                 "status": 2,
                 "create_date": "Sun, 31 Dec 1899 00:00:00 GMT",
                 "create_user": 2,
-                "id_level": [1, 2]
+                "id_program": [1, 2]
             },
             {
-                "id_stage": 1,
-                "stage_name": "Общие сведения",
-                "illustration_link": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fru.depositphotos.com%2Fstock-photos%2F%25D1%2580%25D0%25B0%25D0%25B1%25D0%25BE%25D1%2582%25D0%25B0-%25D0%25B2-%25D0%25B8%25D0%25BD%25D1%2582%25D0%25B5%25D1%2580%25D0%25BD%25D0%25B5%25D1%2582%25D0%25B5.html&psig=AOvVaw0MVUI_amjMnc32xcy1SKU2&ust=1638170544123000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCPi34PzCuvQCFQAAAAAdAAAAABAD",
+                "id_goal": 2,
+                "description": "увеличение продаж",
                 "tier": 12,
-                "point": 34,
                 "status": 2,
                 "create_date": "Sun, 31 Dec 1899 00:00:00 GMT",
                 "create_user": 2,
-                "id_level": [1, 2]
+                "id_program": [3, 4]
             }
         ]
         return Response(data)
 
     def post(self, request, *args, **kwargs):
-        return Response({"id": 3}, status=status.HTTP_200_OK)
+        return Response({"id_goal": 3}, status=status.HTTP_200_OK)
 
     # def put(self, request, *args, **kwargs):
     #     return Response(status=status.HTTP_200_OK)
@@ -218,32 +212,30 @@ class AdaptationDocumentTestAPIView(APIView):
     def get(self, request, *args, **kwargs):
         data = [
             {
-                "id_stage": 1,
-                "stage_name": "Общие сведения",
-                "illustration_link": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fru.depositphotos.com%2Fstock-photos%2F%25D1%2580%25D0%25B0%25D0%25B1%25D0%25BE%25D1%2582%25D0%25B0-%25D0%25B2-%25D0%25B8%25D0%25BD%25D1%2582%25D0%25B5%25D1%2580%25D0%25BD%25D0%25B5%25D1%2582%25D0%25B5.html&psig=AOvVaw0MVUI_amjMnc32xcy1SKU2&ust=1638170544123000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCPi34PzCuvQCFQAAAAAdAAAAABAD",
+                "id_document": 1,
+                "document_name": "Личное дело",
+                "document_link": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fru.depositphotos.com%2Fstock-photos%2F%25D1%2580%25D0%25B0%25D0%25B1%25D0%25BE%25D1%2582%25D0%25B0-%25D0%25B2-%25D0%25B8%25D0%25BD%25D1%2582%25D0%25B5%25D1%2580%25D0%25BD%25D0%25B5%25D1%2582%25D0%25B5.html&psig=AOvVaw0MVUI_amjMnc32xcy1SKU2&ust=1638170544123000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCPi34PzCuvQCFQAAAAAdAAAAABAD",
                 "tier": 12,
-                "point": 34,
                 "status": 2,
                 "create_date": "Sun, 31 Dec 1899 00:00:00 GMT",
                 "create_user": 2,
-                "id_level": [1, 2]
+                "id_program": [1, 2]
             },
             {
-                "id_stage": 1,
-                "stage_name": "Общие сведения",
-                "illustration_link": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fru.depositphotos.com%2Fstock-photos%2F%25D1%2580%25D0%25B0%25D0%25B1%25D0%25BE%25D1%2582%25D0%25B0-%25D0%25B2-%25D0%25B8%25D0%25BD%25D1%2582%25D0%25B5%25D1%2580%25D0%25BD%25D0%25B5%25D1%2582%25D0%25B5.html&psig=AOvVaw0MVUI_amjMnc32xcy1SKU2&ust=1638170544123000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCPi34PzCuvQCFQAAAAAdAAAAABAD",
+                "id_document": 2,
+                "document_name": "должностные инструкции",
+                "document_link": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fru.depositphotos.com%2Fstock-photos%2F%25D1%2580%25D0%25B0%25D0%25B1%25D0%25BE%25D1%2582%25D0%25B0-%25D0%25B2-%25D0%25B8%25D0%25BD%25D1%2582%25D0%25B5%25D1%2580%25D0%25BD%25D0%25B5%25D1%2582%25D0%25B5.html&psig=AOvVaw0MVUI_amjMnc32xcy1SKU2&ust=1638170544123000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCPi34PzCuvQCFQAAAAAdAAAAABAD",
                 "tier": 12,
-                "point": 34,
                 "status": 2,
                 "create_date": "Sun, 31 Dec 1899 00:00:00 GMT",
                 "create_user": 2,
-                "id_level": [1, 2]
+                "id_program": [3, 4]
             }
         ]
         return Response(data)
 
     def post(self, request, *args, **kwargs):
-        return Response({"id": 3}, status=status.HTTP_200_OK)
+        return Response({"id_document": 3}, status=status.HTTP_200_OK)
 
     # def put(self, request, *args, **kwargs):
     #     return Response(status=status.HTTP_200_OK)
@@ -257,32 +249,38 @@ class AdaptationContactTestAPIView(APIView):
     def get(self, request, *args, **kwargs):
         data = [
             {
-                "id_stage": 1,
-                "stage_name": "Общие сведения",
-                "illustration_link": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fru.depositphotos.com%2Fstock-photos%2F%25D1%2580%25D0%25B0%25D0%25B1%25D0%25BE%25D1%2582%25D0%25B0-%25D0%25B2-%25D0%25B8%25D0%25BD%25D1%2582%25D0%25B5%25D1%2580%25D0%25BD%25D0%25B5%25D1%2582%25D0%25B5.html&psig=AOvVaw0MVUI_amjMnc32xcy1SKU2&ust=1638170544123000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCPi34PzCuvQCFQAAAAAdAAAAABAD",
-                "tier": 12,
-                "point": 34,
+                "id_contact": 1,
+                "id_program": 2,
+                "last_name": "Иванов",
+                "first_name": "Иван",
+                "middle_name": "Иванович",
+                "post": "менеджер по продажам",
+                "role": "какая-то роль",
                 "status": 2,
+                "illustration_link": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fru.depositphotos.com%2Fstock-photos%2F%25D1%2580%25D0%25B0%25D0%25B1%25D0%25BE%25D1%2582%25D0%25B0-%25D0%25B2-%25D0%25B8%25D0%25BD%25D1%2582%25D0%25B5%25D1%2580%25D0%25BD%25D0%25B5%25D1%2582%25D0%25B5.html&psig=AOvVaw0MVUI_amjMnc32xcy1SKU2&ust=1638170544123000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCPi34PzCuvQCFQAAAAAdAAAAABAD",
                 "create_date": "Sun, 31 Dec 1899 00:00:00 GMT",
                 "create_user": 2,
                 "id_level": [1, 2]
             },
             {
-                "id_stage": 1,
-                "stage_name": "Общие сведения",
-                "illustration_link": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fru.depositphotos.com%2Fstock-photos%2F%25D1%2580%25D0%25B0%25D0%25B1%25D0%25BE%25D1%2582%25D0%25B0-%25D0%25B2-%25D0%25B8%25D0%25BD%25D1%2582%25D0%25B5%25D1%2580%25D0%25BD%25D0%25B5%25D1%2582%25D0%25B5.html&psig=AOvVaw0MVUI_amjMnc32xcy1SKU2&ust=1638170544123000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCPi34PzCuvQCFQAAAAAdAAAAABAD",
-                "tier": 12,
-                "point": 34,
+                "id_contact": 2,
+                "id_program": 3,
+                "last_name": "Андреев",
+                "first_name": "Андрей",
+                "middle_name": "Андреевич",
+                "post": "начальник отдела рекламы",
+                "role": "какая-то роль",
                 "status": 2,
+                "illustration_link": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fru.depositphotos.com%2Fstock-photos%2F%25D1%2580%25D0%25B0%25D0%25B1%25D0%25BE%25D1%2582%25D0%25B0-%25D0%25B2-%25D0%25B8%25D0%25BD%25D1%2582%25D0%25B5%25D1%2580%25D0%25BD%25D0%25B5%25D1%2582%25D0%25B5.html&psig=AOvVaw0MVUI_amjMnc32xcy1SKU2&ust=1638170544123000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCPi34PzCuvQCFQAAAAAdAAAAABAD",
                 "create_date": "Sun, 31 Dec 1899 00:00:00 GMT",
                 "create_user": 2,
-                "id_level": [1, 2]
+                "id_level": [4, 5]
             }
         ]
         return Response(data)
 
     def post(self, request, *args, **kwargs):
-        return Response({"id": 3}, status=status.HTTP_200_OK)
+        return Response({"id_contact": 3}, status=status.HTTP_200_OK)
 
     # def put(self, request, *args, **kwargs):
     #     return Response(status=status.HTTP_200_OK)
@@ -293,587 +291,107 @@ class AdaptationContactTestAPIView(APIView):
 
 class LnkLevelProgramTestAPIView(APIView):
 
-    def get(self, request, *args, **kwargs):
-        data = [
-            {
-                "id_stage": 1,
-                "stage_name": "Общие сведения",
-                "illustration_link": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fru.depositphotos.com%2Fstock-photos%2F%25D1%2580%25D0%25B0%25D0%25B1%25D0%25BE%25D1%2582%25D0%25B0-%25D0%25B2-%25D0%25B8%25D0%25BD%25D1%2582%25D0%25B5%25D1%2580%25D0%25BD%25D0%25B5%25D1%2582%25D0%25B5.html&psig=AOvVaw0MVUI_amjMnc32xcy1SKU2&ust=1638170544123000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCPi34PzCuvQCFQAAAAAdAAAAABAD",
-                "tier": 12,
-                "point": 34,
-                "status": 2,
-                "create_date": "Sun, 31 Dec 1899 00:00:00 GMT",
-                "create_user": 2,
-                "id_level": [1, 2]
-            },
-            {
-                "id_stage": 1,
-                "stage_name": "Общие сведения",
-                "illustration_link": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fru.depositphotos.com%2Fstock-photos%2F%25D1%2580%25D0%25B0%25D0%25B1%25D0%25BE%25D1%2582%25D0%25B0-%25D0%25B2-%25D0%25B8%25D0%25BD%25D1%2582%25D0%25B5%25D1%2580%25D0%25BD%25D0%25B5%25D1%2582%25D0%25B5.html&psig=AOvVaw0MVUI_amjMnc32xcy1SKU2&ust=1638170544123000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCPi34PzCuvQCFQAAAAAdAAAAABAD",
-                "tier": 12,
-                "point": 34,
-                "status": 2,
-                "create_date": "Sun, 31 Dec 1899 00:00:00 GMT",
-                "create_user": 2,
-                "id_level": [1, 2]
-            }
-        ]
-        return Response(data)
-
     def post(self, request, *args, **kwargs):
-        return Response({"id": 3}, status=status.HTTP_200_OK)
+        return Response({"id_lnk_level_program": 3}, status=status.HTTP_200_OK)
 
     # def put(self, request, *args, **kwargs):
     #     return Response(status=status.HTTP_200_OK)
-
-    def delete(self, request, *args, **kwargs):
-        return Response(status=status.HTTP_204_NO_CONTENT)
 
 
 class LnkStageLevelTestAPIView(APIView):
 
-    def get(self, request, *args, **kwargs):
-        data = [
-            {
-                "id_stage": 1,
-                "stage_name": "Общие сведения",
-                "illustration_link": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fru.depositphotos.com%2Fstock-photos%2F%25D1%2580%25D0%25B0%25D0%25B1%25D0%25BE%25D1%2582%25D0%25B0-%25D0%25B2-%25D0%25B8%25D0%25BD%25D1%2582%25D0%25B5%25D1%2580%25D0%25BD%25D0%25B5%25D1%2582%25D0%25B5.html&psig=AOvVaw0MVUI_amjMnc32xcy1SKU2&ust=1638170544123000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCPi34PzCuvQCFQAAAAAdAAAAABAD",
-                "tier": 12,
-                "point": 34,
-                "status": 2,
-                "create_date": "Sun, 31 Dec 1899 00:00:00 GMT",
-                "create_user": 2,
-                "id_level": [1, 2]
-            },
-            {
-                "id_stage": 1,
-                "stage_name": "Общие сведения",
-                "illustration_link": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fru.depositphotos.com%2Fstock-photos%2F%25D1%2580%25D0%25B0%25D0%25B1%25D0%25BE%25D1%2582%25D0%25B0-%25D0%25B2-%25D0%25B8%25D0%25BD%25D1%2582%25D0%25B5%25D1%2580%25D0%25BD%25D0%25B5%25D1%2582%25D0%25B5.html&psig=AOvVaw0MVUI_amjMnc32xcy1SKU2&ust=1638170544123000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCPi34PzCuvQCFQAAAAAdAAAAABAD",
-                "tier": 12,
-                "point": 34,
-                "status": 2,
-                "create_date": "Sun, 31 Dec 1899 00:00:00 GMT",
-                "create_user": 2,
-                "id_level": [1, 2]
-            }
-        ]
-        return Response(data)
-
     def post(self, request, *args, **kwargs):
-        return Response({"id": 3}, status=status.HTTP_200_OK)
+        return Response({"id_lnk_level_program": 3}, status=status.HTTP_200_OK)
 
     # def put(self, request, *args, **kwargs):
     #     return Response(status=status.HTTP_200_OK)
-
-    def delete(self, request, *args, **kwargs):
-        return Response(status=status.HTTP_204_NO_CONTENT)
 
 
 class LnkGoalProgramTestAPIView(APIView):
 
-    def get(self, request, *args, **kwargs):
-        data = [
-            {
-                "id_stage": 1,
-                "stage_name": "Общие сведения",
-                "illustration_link": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fru.depositphotos.com%2Fstock-photos%2F%25D1%2580%25D0%25B0%25D0%25B1%25D0%25BE%25D1%2582%25D0%25B0-%25D0%25B2-%25D0%25B8%25D0%25BD%25D1%2582%25D0%25B5%25D1%2580%25D0%25BD%25D0%25B5%25D1%2582%25D0%25B5.html&psig=AOvVaw0MVUI_amjMnc32xcy1SKU2&ust=1638170544123000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCPi34PzCuvQCFQAAAAAdAAAAABAD",
-                "tier": 12,
-                "point": 34,
-                "status": 2,
-                "create_date": "Sun, 31 Dec 1899 00:00:00 GMT",
-                "create_user": 2,
-                "id_level": [1, 2]
-            },
-            {
-                "id_stage": 1,
-                "stage_name": "Общие сведения",
-                "illustration_link": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fru.depositphotos.com%2Fstock-photos%2F%25D1%2580%25D0%25B0%25D0%25B1%25D0%25BE%25D1%2582%25D0%25B0-%25D0%25B2-%25D0%25B8%25D0%25BD%25D1%2582%25D0%25B5%25D1%2580%25D0%25BD%25D0%25B5%25D1%2582%25D0%25B5.html&psig=AOvVaw0MVUI_amjMnc32xcy1SKU2&ust=1638170544123000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCPi34PzCuvQCFQAAAAAdAAAAABAD",
-                "tier": 12,
-                "point": 34,
-                "status": 2,
-                "create_date": "Sun, 31 Dec 1899 00:00:00 GMT",
-                "create_user": 2,
-                "id_level": [1, 2]
-            }
-        ]
-        return Response(data)
-
     def post(self, request, *args, **kwargs):
-        return Response({"id": 3}, status=status.HTTP_200_OK)
+        return Response({"id_lnk_goal_program": 3}, status=status.HTTP_200_OK)
 
     # def put(self, request, *args, **kwargs):
     #     return Response(status=status.HTTP_200_OK)
-
-    def delete(self, request, *args, **kwargs):
-        return Response(status=status.HTTP_204_NO_CONTENT)
 
 
 class LnkDocumentProgramTestAPIView(APIView):
 
-    def get(self, request, *args, **kwargs):
-        data = [
-            {
-                "id_stage": 1,
-                "stage_name": "Общие сведения",
-                "illustration_link": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fru.depositphotos.com%2Fstock-photos%2F%25D1%2580%25D0%25B0%25D0%25B1%25D0%25BE%25D1%2582%25D0%25B0-%25D0%25B2-%25D0%25B8%25D0%25BD%25D1%2582%25D0%25B5%25D1%2580%25D0%25BD%25D0%25B5%25D1%2582%25D0%25B5.html&psig=AOvVaw0MVUI_amjMnc32xcy1SKU2&ust=1638170544123000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCPi34PzCuvQCFQAAAAAdAAAAABAD",
-                "tier": 12,
-                "point": 34,
-                "status": 2,
-                "create_date": "Sun, 31 Dec 1899 00:00:00 GMT",
-                "create_user": 2,
-                "id_level": [1, 2]
-            },
-            {
-                "id_stage": 1,
-                "stage_name": "Общие сведения",
-                "illustration_link": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fru.depositphotos.com%2Fstock-photos%2F%25D1%2580%25D0%25B0%25D0%25B1%25D0%25BE%25D1%2582%25D0%25B0-%25D0%25B2-%25D0%25B8%25D0%25BD%25D1%2582%25D0%25B5%25D1%2580%25D0%25BD%25D0%25B5%25D1%2582%25D0%25B5.html&psig=AOvVaw0MVUI_amjMnc32xcy1SKU2&ust=1638170544123000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCPi34PzCuvQCFQAAAAAdAAAAABAD",
-                "tier": 12,
-                "point": 34,
-                "status": 2,
-                "create_date": "Sun, 31 Dec 1899 00:00:00 GMT",
-                "create_user": 2,
-                "id_level": [1, 2]
-            }
-        ]
-        return Response(data)
-
     def post(self, request, *args, **kwargs):
-        return Response({"id": 3}, status=status.HTTP_200_OK)
+        return Response({"id_lnk_document_program": 3}, status=status.HTTP_200_OK)
 
     # def put(self, request, *args, **kwargs):
     #     return Response(status=status.HTTP_200_OK)
-
-    def delete(self, request, *args, **kwargs):
-        return Response(status=status.HTTP_204_NO_CONTENT)
 
 
 class LnkContactProgramTestAPIView(APIView):
 
-    def get(self, request, *args, **kwargs):
-        data = [
-            {
-                "id_stage": 1,
-                "stage_name": "Общие сведения",
-                "illustration_link": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fru.depositphotos.com%2Fstock-photos%2F%25D1%2580%25D0%25B0%25D0%25B1%25D0%25BE%25D1%2582%25D0%25B0-%25D0%25B2-%25D0%25B8%25D0%25BD%25D1%2582%25D0%25B5%25D1%2580%25D0%25BD%25D0%25B5%25D1%2582%25D0%25B5.html&psig=AOvVaw0MVUI_amjMnc32xcy1SKU2&ust=1638170544123000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCPi34PzCuvQCFQAAAAAdAAAAABAD",
-                "tier": 12,
-                "point": 34,
-                "status": 2,
-                "create_date": "Sun, 31 Dec 1899 00:00:00 GMT",
-                "create_user": 2,
-                "id_level": [1, 2]
-            },
-            {
-                "id_stage": 1,
-                "stage_name": "Общие сведения",
-                "illustration_link": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fru.depositphotos.com%2Fstock-photos%2F%25D1%2580%25D0%25B0%25D0%25B1%25D0%25BE%25D1%2582%25D0%25B0-%25D0%25B2-%25D0%25B8%25D0%25BD%25D1%2582%25D0%25B5%25D1%2580%25D0%25BD%25D0%25B5%25D1%2582%25D0%25B5.html&psig=AOvVaw0MVUI_amjMnc32xcy1SKU2&ust=1638170544123000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCPi34PzCuvQCFQAAAAAdAAAAABAD",
-                "tier": 12,
-                "point": 34,
-                "status": 2,
-                "create_date": "Sun, 31 Dec 1899 00:00:00 GMT",
-                "create_user": 2,
-                "id_level": [1, 2]
-            }
-        ]
-        return Response(data)
-
     def post(self, request, *args, **kwargs):
-        return Response({"id": 3}, status=status.HTTP_200_OK)
+        return Response({"id_lnk_contact_program": 3}, status=status.HTTP_200_OK)
 
     # def put(self, request, *args, **kwargs):
     #     return Response(status=status.HTTP_200_OK)
 
-    def delete(self, request, *args, **kwargs):
-        return Response(status=status.HTTP_204_NO_CONTENT)
+
+# class CustomerTestAPIView(APIView):
 
 
-class CustomerTestAPIView(APIView):
-
-    def get(self, request, *args, **kwargs):
-        data = [
-            {
-                "id_stage": 1,
-                "stage_name": "Общие сведения",
-                "illustration_link": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fru.depositphotos.com%2Fstock-photos%2F%25D1%2580%25D0%25B0%25D0%25B1%25D0%25BE%25D1%2582%25D0%25B0-%25D0%25B2-%25D0%25B8%25D0%25BD%25D1%2582%25D0%25B5%25D1%2580%25D0%25BD%25D0%25B5%25D1%2582%25D0%25B5.html&psig=AOvVaw0MVUI_amjMnc32xcy1SKU2&ust=1638170544123000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCPi34PzCuvQCFQAAAAAdAAAAABAD",
-                "tier": 12,
-                "point": 34,
-                "status": 2,
-                "create_date": "Sun, 31 Dec 1899 00:00:00 GMT",
-                "create_user": 2,
-                "id_level": [1, 2]
-            },
-            {
-                "id_stage": 1,
-                "stage_name": "Общие сведения",
-                "illustration_link": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fru.depositphotos.com%2Fstock-photos%2F%25D1%2580%25D0%25B0%25D0%25B1%25D0%25BE%25D1%2582%25D0%25B0-%25D0%25B2-%25D0%25B8%25D0%25BD%25D1%2582%25D0%25B5%25D1%2580%25D0%25BD%25D0%25B5%25D1%2582%25D0%25B5.html&psig=AOvVaw0MVUI_amjMnc32xcy1SKU2&ust=1638170544123000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCPi34PzCuvQCFQAAAAAdAAAAABAD",
-                "tier": 12,
-                "point": 34,
-                "status": 2,
-                "create_date": "Sun, 31 Dec 1899 00:00:00 GMT",
-                "create_user": 2,
-                "id_level": [1, 2]
-            }
-        ]
-        return Response(data)
-
-    def post(self, request, *args, **kwargs):
-        return Response({"id": 3}, status=status.HTTP_200_OK)
-
-    # def put(self, request, *args, **kwargs):
-    #     return Response(status=status.HTTP_200_OK)
-
-    def delete(self, request, *args, **kwargs):
-        return Response(status=status.HTTP_204_NO_CONTENT)
+# Нет данных
 
 
-class LicensePackTestAPIView(APIView):
-
-    def get(self, request, *args, **kwargs):
-        data = [
-            {
-                "id_stage": 1,
-                "stage_name": "Общие сведения",
-                "illustration_link": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fru.depositphotos.com%2Fstock-photos%2F%25D1%2580%25D0%25B0%25D0%25B1%25D0%25BE%25D1%2582%25D0%25B0-%25D0%25B2-%25D0%25B8%25D0%25BD%25D1%2582%25D0%25B5%25D1%2580%25D0%25BD%25D0%25B5%25D1%2582%25D0%25B5.html&psig=AOvVaw0MVUI_amjMnc32xcy1SKU2&ust=1638170544123000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCPi34PzCuvQCFQAAAAAdAAAAABAD",
-                "tier": 12,
-                "point": 34,
-                "status": 2,
-                "create_date": "Sun, 31 Dec 1899 00:00:00 GMT",
-                "create_user": 2,
-                "id_level": [1, 2]
-            },
-            {
-                "id_stage": 1,
-                "stage_name": "Общие сведения",
-                "illustration_link": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fru.depositphotos.com%2Fstock-photos%2F%25D1%2580%25D0%25B0%25D0%25B1%25D0%25BE%25D1%2582%25D0%25B0-%25D0%25B2-%25D0%25B8%25D0%25BD%25D1%2582%25D0%25B5%25D1%2580%25D0%25BD%25D0%25B5%25D1%2582%25D0%25B5.html&psig=AOvVaw0MVUI_amjMnc32xcy1SKU2&ust=1638170544123000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCPi34PzCuvQCFQAAAAAdAAAAABAD",
-                "tier": 12,
-                "point": 34,
-                "status": 2,
-                "create_date": "Sun, 31 Dec 1899 00:00:00 GMT",
-                "create_user": 2,
-                "id_level": [1, 2]
-            }
-        ]
-        return Response(data)
-
-    def post(self, request, *args, **kwargs):
-        return Response({"id": 3}, status=status.HTTP_200_OK)
-
-    # def put(self, request, *args, **kwargs):
-    #     return Response(status=status.HTTP_200_OK)
-
-    def delete(self, request, *args, **kwargs):
-        return Response(status=status.HTTP_204_NO_CONTENT)
+# class LicensePackTestAPIView(APIView):
 
 
-class UserServiceUserTestAPIView(APIView):
+# Нет данных
 
-    def get(self, request, *args, **kwargs):
-        data = [
-            {
-                "id_stage": 1,
-                "stage_name": "Общие сведения",
-                "illustration_link": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fru.depositphotos.com%2Fstock-photos%2F%25D1%2580%25D0%25B0%25D0%25B1%25D0%25BE%25D1%2582%25D0%25B0-%25D0%25B2-%25D0%25B8%25D0%25BD%25D1%2582%25D0%25B5%25D1%2580%25D0%25BD%25D0%25B5%25D1%2582%25D0%25B5.html&psig=AOvVaw0MVUI_amjMnc32xcy1SKU2&ust=1638170544123000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCPi34PzCuvQCFQAAAAAdAAAAABAD",
-                "tier": 12,
-                "point": 34,
-                "status": 2,
-                "create_date": "Sun, 31 Dec 1899 00:00:00 GMT",
-                "create_user": 2,
-                "id_level": [1, 2]
-            },
-            {
-                "id_stage": 1,
-                "stage_name": "Общие сведения",
-                "illustration_link": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fru.depositphotos.com%2Fstock-photos%2F%25D1%2580%25D0%25B0%25D0%25B1%25D0%25BE%25D1%2582%25D0%25B0-%25D0%25B2-%25D0%25B8%25D0%25BD%25D1%2582%25D0%25B5%25D1%2580%25D0%25BD%25D0%25B5%25D1%2582%25D0%25B5.html&psig=AOvVaw0MVUI_amjMnc32xcy1SKU2&ust=1638170544123000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCPi34PzCuvQCFQAAAAAdAAAAABAD",
-                "tier": 12,
-                "point": 34,
-                "status": 2,
-                "create_date": "Sun, 31 Dec 1899 00:00:00 GMT",
-                "create_user": 2,
-                "id_level": [1, 2]
-            }
-        ]
-        return Response(data)
 
-    def post(self, request, *args, **kwargs):
-        return Response({"id": 3}, status=status.HTTP_200_OK)
+# class UserServiceUserTestAPIView(APIView):
 
-    # def put(self, request, *args, **kwargs):
-    #     return Response(status=status.HTTP_200_OK)
 
-    def delete(self, request, *args, **kwargs):
-        return Response(status=status.HTTP_204_NO_CONTENT)
+# Нет данных
 
 
 class UserServiceSMSTestAPIView(APIView):
 
-    def get(self, request, *args, **kwargs):
-        data = [
-            {
-                "id_stage": 1,
-                "stage_name": "Общие сведения",
-                "illustration_link": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fru.depositphotos.com%2Fstock-photos%2F%25D1%2580%25D0%25B0%25D0%25B1%25D0%25BE%25D1%2582%25D0%25B0-%25D0%25B2-%25D0%25B8%25D0%25BD%25D1%2582%25D0%25B5%25D1%2580%25D0%25BD%25D0%25B5%25D1%2582%25D0%25B5.html&psig=AOvVaw0MVUI_amjMnc32xcy1SKU2&ust=1638170544123000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCPi34PzCuvQCFQAAAAAdAAAAABAD",
-                "tier": 12,
-                "point": 34,
-                "status": 2,
-                "create_date": "Sun, 31 Dec 1899 00:00:00 GMT",
-                "create_user": 2,
-                "id_level": [1, 2]
-            },
-            {
-                "id_stage": 1,
-                "stage_name": "Общие сведения",
-                "illustration_link": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fru.depositphotos.com%2Fstock-photos%2F%25D1%2580%25D0%25B0%25D0%25B1%25D0%25BE%25D1%2582%25D0%25B0-%25D0%25B2-%25D0%25B8%25D0%25BD%25D1%2582%25D0%25B5%25D1%2580%25D0%25BD%25D0%25B5%25D1%2582%25D0%25B5.html&psig=AOvVaw0MVUI_amjMnc32xcy1SKU2&ust=1638170544123000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCPi34PzCuvQCFQAAAAAdAAAAABAD",
-                "tier": 12,
-                "point": 34,
-                "status": 2,
-                "create_date": "Sun, 31 Dec 1899 00:00:00 GMT",
-                "create_user": 2,
-                "id_level": [1, 2]
-            }
-        ]
-        return Response(data)
-
     def post(self, request, *args, **kwargs):
-        return Response({"id": 3}, status=status.HTTP_200_OK)
-
-    # def put(self, request, *args, **kwargs):
-    #     return Response(status=status.HTTP_200_OK)
-
-    def delete(self, request, *args, **kwargs):
-        return Response(status=status.HTTP_204_NO_CONTENT)
+        return Response(status=status.HTTP_200_OK)
 
 
 class UserServiceTokenTestAPIView(APIView):
 
     def get(self, request, *args, **kwargs):
-        data = [
-            {
-                "id_stage": 1,
-                "stage_name": "Общие сведения",
-                "illustration_link": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fru.depositphotos.com%2Fstock-photos%2F%25D1%2580%25D0%25B0%25D0%25B1%25D0%25BE%25D1%2582%25D0%25B0-%25D0%25B2-%25D0%25B8%25D0%25BD%25D1%2582%25D0%25B5%25D1%2580%25D0%25BD%25D0%25B5%25D1%2582%25D0%25B5.html&psig=AOvVaw0MVUI_amjMnc32xcy1SKU2&ust=1638170544123000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCPi34PzCuvQCFQAAAAAdAAAAABAD",
-                "tier": 12,
-                "point": 34,
-                "status": 2,
-                "create_date": "Sun, 31 Dec 1899 00:00:00 GMT",
-                "create_user": 2,
-                "id_level": [1, 2]
-            },
-            {
-                "id_stage": 1,
-                "stage_name": "Общие сведения",
-                "illustration_link": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fru.depositphotos.com%2Fstock-photos%2F%25D1%2580%25D0%25B0%25D0%25B1%25D0%25BE%25D1%2582%25D0%25B0-%25D0%25B2-%25D0%25B8%25D0%25BD%25D1%2582%25D0%25B5%25D1%2580%25D0%25BD%25D0%25B5%25D1%2582%25D0%25B5.html&psig=AOvVaw0MVUI_amjMnc32xcy1SKU2&ust=1638170544123000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCPi34PzCuvQCFQAAAAAdAAAAABAD",
-                "tier": 12,
-                "point": 34,
-                "status": 2,
-                "create_date": "Sun, 31 Dec 1899 00:00:00 GMT",
-                "create_user": 2,
-                "id_level": [1, 2]
-            }
-        ]
-        return Response(data)
-
-    def post(self, request, *args, **kwargs):
-        return Response({"id": 3}, status=status.HTTP_200_OK)
-
-    # def put(self, request, *args, **kwargs):
-    #     return Response(status=status.HTTP_200_OK)
-
-    def delete(self, request, *args, **kwargs):
-        return Response(status=status.HTTP_204_NO_CONTENT)
+        return Response({"2336D7B2F8EFDC58B3EE3F5CD99BB"})
 
 
-class UserServiceCandidateTestAPIView(APIView):
-
-    def get(self, request, *args, **kwargs):
-        data = [
-            {
-                "id_stage": 1,
-                "stage_name": "Общие сведения",
-                "illustration_link": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fru.depositphotos.com%2Fstock-photos%2F%25D1%2580%25D0%25B0%25D0%25B1%25D0%25BE%25D1%2582%25D0%25B0-%25D0%25B2-%25D0%25B8%25D0%25BD%25D1%2582%25D0%25B5%25D1%2580%25D0%25BD%25D0%25B5%25D1%2582%25D0%25B5.html&psig=AOvVaw0MVUI_amjMnc32xcy1SKU2&ust=1638170544123000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCPi34PzCuvQCFQAAAAAdAAAAABAD",
-                "tier": 12,
-                "point": 34,
-                "status": 2,
-                "create_date": "Sun, 31 Dec 1899 00:00:00 GMT",
-                "create_user": 2,
-                "id_level": [1, 2]
-            },
-            {
-                "id_stage": 1,
-                "stage_name": "Общие сведения",
-                "illustration_link": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fru.depositphotos.com%2Fstock-photos%2F%25D1%2580%25D0%25B0%25D0%25B1%25D0%25BE%25D1%2582%25D0%25B0-%25D0%25B2-%25D0%25B8%25D0%25BD%25D1%2582%25D0%25B5%25D1%2580%25D0%25BD%25D0%25B5%25D1%2582%25D0%25B5.html&psig=AOvVaw0MVUI_amjMnc32xcy1SKU2&ust=1638170544123000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCPi34PzCuvQCFQAAAAAdAAAAABAD",
-                "tier": 12,
-                "point": 34,
-                "status": 2,
-                "create_date": "Sun, 31 Dec 1899 00:00:00 GMT",
-                "create_user": 2,
-                "id_level": [1, 2]
-            }
-        ]
-        return Response(data)
-
-    def post(self, request, *args, **kwargs):
-        return Response({"id": 3}, status=status.HTTP_200_OK)
-
-    # def put(self, request, *args, **kwargs):
-    #     return Response(status=status.HTTP_200_OK)
-
-    def delete(self, request, *args, **kwargs):
-        return Response(status=status.HTTP_204_NO_CONTENT)
+# class UserServiceCandidateTestAPIView(APIView):
 
 
-class EmployeeTestAPIView(APIView):
+# Нет данных
 
-    def get(self, request, *args, **kwargs):
-        data = [
-            {
-                "id_stage": 1,
-                "stage_name": "Общие сведения",
-                "illustration_link": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fru.depositphotos.com%2Fstock-photos%2F%25D1%2580%25D0%25B0%25D0%25B1%25D0%25BE%25D1%2582%25D0%25B0-%25D0%25B2-%25D0%25B8%25D0%25BD%25D1%2582%25D0%25B5%25D1%2580%25D0%25BD%25D0%25B5%25D1%2582%25D0%25B5.html&psig=AOvVaw0MVUI_amjMnc32xcy1SKU2&ust=1638170544123000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCPi34PzCuvQCFQAAAAAdAAAAABAD",
-                "tier": 12,
-                "point": 34,
-                "status": 2,
-                "create_date": "Sun, 31 Dec 1899 00:00:00 GMT",
-                "create_user": 2,
-                "id_level": [1, 2]
-            },
-            {
-                "id_stage": 1,
-                "stage_name": "Общие сведения",
-                "illustration_link": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fru.depositphotos.com%2Fstock-photos%2F%25D1%2580%25D0%25B0%25D0%25B1%25D0%25BE%25D1%2582%25D0%25B0-%25D0%25B2-%25D0%25B8%25D0%25BD%25D1%2582%25D0%25B5%25D1%2580%25D0%25BD%25D0%25B5%25D1%2582%25D0%25B5.html&psig=AOvVaw0MVUI_amjMnc32xcy1SKU2&ust=1638170544123000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCPi34PzCuvQCFQAAAAAdAAAAABAD",
-                "tier": 12,
-                "point": 34,
-                "status": 2,
-                "create_date": "Sun, 31 Dec 1899 00:00:00 GMT",
-                "create_user": 2,
-                "id_level": [1, 2]
-            }
-        ]
-        return Response(data)
 
-    def post(self, request, *args, **kwargs):
-        return Response({"id": 3}, status=status.HTTP_200_OK)
+# class EmployeeTestAPIView(APIView):
 
-    # def put(self, request, *args, **kwargs):
-    #     return Response(status=status.HTTP_200_OK)
 
-    def delete(self, request, *args, **kwargs):
-        return Response(status=status.HTTP_204_NO_CONTENT)
+# Нет данных
 
 
 class IEmployeeServiceAuthenticationTestAPIView(APIView):
 
-    def get(self, request, *args, **kwargs):
-        data = [
-            {
-                "id_stage": 1,
-                "stage_name": "Общие сведения",
-                "illustration_link": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fru.depositphotos.com%2Fstock-photos%2F%25D1%2580%25D0%25B0%25D0%25B1%25D0%25BE%25D1%2582%25D0%25B0-%25D0%25B2-%25D0%25B8%25D0%25BD%25D1%2582%25D0%25B5%25D1%2580%25D0%25BD%25D0%25B5%25D1%2582%25D0%25B5.html&psig=AOvVaw0MVUI_amjMnc32xcy1SKU2&ust=1638170544123000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCPi34PzCuvQCFQAAAAAdAAAAABAD",
-                "tier": 12,
-                "point": 34,
-                "status": 2,
-                "create_date": "Sun, 31 Dec 1899 00:00:00 GMT",
-                "create_user": 2,
-                "id_level": [1, 2]
-            },
-            {
-                "id_stage": 1,
-                "stage_name": "Общие сведения",
-                "illustration_link": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fru.depositphotos.com%2Fstock-photos%2F%25D1%2580%25D0%25B0%25D0%25B1%25D0%25BE%25D1%2582%25D0%25B0-%25D0%25B2-%25D0%25B8%25D0%25BD%25D1%2582%25D0%25B5%25D1%2580%25D0%25BD%25D0%25B5%25D1%2582%25D0%25B5.html&psig=AOvVaw0MVUI_amjMnc32xcy1SKU2&ust=1638170544123000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCPi34PzCuvQCFQAAAAAdAAAAABAD",
-                "tier": 12,
-                "point": 34,
-                "status": 2,
-                "create_date": "Sun, 31 Dec 1899 00:00:00 GMT",
-                "create_user": 2,
-                "id_level": [1, 2]
-            }
-        ]
-        return Response(data)
-
     def post(self, request, *args, **kwargs):
-        return Response({"id": 3}, status=status.HTTP_200_OK)
-
-    # def put(self, request, *args, **kwargs):
-    #     return Response(status=status.HTTP_200_OK)
-
-    def delete(self, request, *args, **kwargs):
-        return Response(status=status.HTTP_204_NO_CONTENT)
+        return Response({"OK"}, status=status.HTTP_200_OK)
 
 
 class RequestUserToken(APIView):
 
     def get(self, request, *args, **kwargs):
-        data = [
-            {
-                "id_stage": 1,
-                "stage_name": "Общие сведения",
-                "illustration_link": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fru.depositphotos.com%2Fstock-photos%2F%25D1%2580%25D0%25B0%25D0%25B1%25D0%25BE%25D1%2582%25D0%25B0-%25D0%25B2-%25D0%25B8%25D0%25BD%25D1%2582%25D0%25B5%25D1%2580%25D0%25BD%25D0%25B5%25D1%2582%25D0%25B5.html&psig=AOvVaw0MVUI_amjMnc32xcy1SKU2&ust=1638170544123000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCPi34PzCuvQCFQAAAAAdAAAAABAD",
-                "tier": 12,
-                "point": 34,
-                "status": 2,
-                "create_date": "Sun, 31 Dec 1899 00:00:00 GMT",
-                "create_user": 2,
-                "id_level": [1, 2]
-            },
-            {
-                "id_stage": 1,
-                "stage_name": "Общие сведения",
-                "illustration_link": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fru.depositphotos.com%2Fstock-photos%2F%25D1%2580%25D0%25B0%25D0%25B1%25D0%25BE%25D1%2582%25D0%25B0-%25D0%25B2-%25D0%25B8%25D0%25BD%25D1%2582%25D0%25B5%25D1%2580%25D0%25BD%25D0%25B5%25D1%2582%25D0%25B5.html&psig=AOvVaw0MVUI_amjMnc32xcy1SKU2&ust=1638170544123000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCPi34PzCuvQCFQAAAAAdAAAAABAD",
-                "tier": 12,
-                "point": 34,
-                "status": 2,
-                "create_date": "Sun, 31 Dec 1899 00:00:00 GMT",
-                "create_user": 2,
-                "id_level": [1, 2]
-            }
-        ]
-        return Response(data)
-
-    def post(self, request, *args, **kwargs):
-        return Response({"id": 3}, status=status.HTTP_200_OK)
-
-    # def put(self, request, *args, **kwargs):
-    #     return Response(status=status.HTTP_200_OK)
-
-    def delete(self, request, *args, **kwargs):
-        return Response(status=status.HTTP_204_NO_CONTENT)
+        return Response("2336D7B2F8EFDC58B3EE3F5CD99BB")
 
 
 class IAdaptationProgramTestAPIView(APIView):
 
     def get(self, request, *args, **kwargs):
-        data = [
-            {
-                "id_stage": 1,
-                "stage_name": "Общие сведения",
-                "illustration_link": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fru.depositphotos.com%2Fstock-photos%2F%25D1%2580%25D0%25B0%25D0%25B1%25D0%25BE%25D1%2582%25D0%25B0-%25D0%25B2-%25D0%25B8%25D0%25BD%25D1%2582%25D0%25B5%25D1%2580%25D0%25BD%25D0%25B5%25D1%2582%25D0%25B5.html&psig=AOvVaw0MVUI_amjMnc32xcy1SKU2&ust=1638170544123000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCPi34PzCuvQCFQAAAAAdAAAAABAD",
-                "tier": 12,
-                "point": 34,
-                "status": 2,
-                "create_date": "Sun, 31 Dec 1899 00:00:00 GMT",
-                "create_user": 2,
-                "id_level": [1, 2]
-            },
-            {
-                "id_stage": 1,
-                "stage_name": "Общие сведения",
-                "illustration_link": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fru.depositphotos.com%2Fstock-photos%2F%25D1%2580%25D0%25B0%25D0%25B1%25D0%25BE%25D1%2582%25D0%25B0-%25D0%25B2-%25D0%25B8%25D0%25BD%25D1%2582%25D0%25B5%25D1%2580%25D0%25BD%25D0%25B5%25D1%2582%25D0%25B5.html&psig=AOvVaw0MVUI_amjMnc32xcy1SKU2&ust=1638170544123000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCPi34PzCuvQCFQAAAAAdAAAAABAD",
-                "tier": 12,
-                "point": 34,
-                "status": 2,
-                "create_date": "Sun, 31 Dec 1899 00:00:00 GMT",
-                "create_user": 2,
-                "id_level": [1, 2]
-            }
-        ]
-        return Response(data)
-
-    def post(self, request, *args, **kwargs):
-        return Response({"id": 3}, status=status.HTTP_200_OK)
-
-    # def put(self, request, *args, **kwargs):
-    #     return Response(status=status.HTTP_200_OK)
-
-    def delete(self, request, *args, **kwargs):
-        return Response(status=status.HTTP_204_NO_CONTENT)
+        return Response({"id_program": 3}, status=status.HTTP_200_OK)
 
 
 class ILevelStagesTestAPIView(APIView):
@@ -881,38 +399,73 @@ class ILevelStagesTestAPIView(APIView):
     def get(self, request, *args, **kwargs):
         data = [
             {
-                "id_stage": 1,
-                "stage_name": "Общие сведения",
-                "illustration_link": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fru.depositphotos.com%2Fstock-photos%2F%25D1%2580%25D0%25B0%25D0%25B1%25D0%25BE%25D1%2582%25D0%25B0-%25D0%25B2-%25D0%25B8%25D0%25BD%25D1%2582%25D0%25B5%25D1%2580%25D0%25BD%25D0%25B5%25D1%2582%25D0%25B5.html&psig=AOvVaw0MVUI_amjMnc32xcy1SKU2&ust=1638170544123000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCPi34PzCuvQCFQAAAAAdAAAAABAD",
+                "id_level": 1,
+                "level_name": "Общие сведения",
+                "illustration": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fru.depositphotos.com%2Fstock-photos%2F%25D1%2580%25D0%25B0%25D0%25B1%25D0%25BE%25D1%2582%25D0%25B0-%25D0%25B2-%25D0%25B8%25D0%25BD%25D1%2582%25D0%25B5%25D1%2580%25D0%25BD%25D0%25B5%25D1%2582%25D0%25B5.html&psig=AOvVaw0MVUI_amjMnc32xcy1SKU2&ust=1638170544123000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCPi34PzCuvQCFQAAAAAdAAAAABAD",
                 "tier": 12,
-                "point": 34,
                 "status": 2,
-                "create_date": "Sun, 31 Dec 1899 00:00:00 GMT",
-                "create_user": 2,
-                "id_level": [1, 2]
+                "stages": [
+                    {
+                        "id_stage": 1,
+                        "stage_name": "stage 1",
+                        "illustration_link": "https://upload.wikimedia.org/wikipedia/commons/d/df/Open_sea_%28july_2021%29.jpg",
+                        "tier": 12,
+                        "point": 122,
+                        "is_completed": "true"
+                    },
+                    {
+                        "id_stage": 2,
+                        "stage_name": "stage 2",
+                        "illustration_link": "https://upload.wikimedia.org/wikipedia/commons/d/df/Open_sea_%28july_2021%29.jpg",
+                        "tier": 12,
+                        "point": 122,
+                        "is_completed": "true"
+                    },
+                    {
+                        "id_stage": 3,
+                        "stage_name": "stage 3",
+                        "illustration_link": "https://upload.wikimedia.org/wikipedia/commons/d/df/Open_sea_%28july_2021%29.jpg",
+                        "tier": 12,
+                        "point": 122,
+                        "is_completed": "true"
+                    }
+                ]
             },
             {
-                "id_stage": 1,
-                "stage_name": "Общие сведения",
-                "illustration_link": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fru.depositphotos.com%2Fstock-photos%2F%25D1%2580%25D0%25B0%25D0%25B1%25D0%25BE%25D1%2582%25D0%25B0-%25D0%25B2-%25D0%25B8%25D0%25BD%25D1%2582%25D0%25B5%25D1%2580%25D0%25BD%25D0%25B5%25D1%2582%25D0%25B5.html&psig=AOvVaw0MVUI_amjMnc32xcy1SKU2&ust=1638170544123000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCPi34PzCuvQCFQAAAAAdAAAAABAD",
+                "id_level": 2,
+                "level_name": "Общие сведения 2",
+                "illustration": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fru.depositphotos.com%2Fstock-photos%2F%25D1%2580%25D0%25B0%25D0%25B1%25D0%25BE%25D1%2582%25D0%25B0-%25D0%25B2-%25D0%25B8%25D0%25BD%25D1%2582%25D0%25B5%25D1%2580%25D0%25BD%25D0%25B5%25D1%2582%25D0%25B5.html&psig=AOvVaw0MVUI_amjMnc32xcy1SKU2&ust=1638170544123000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCPi34PzCuvQCFQAAAAAdAAAAABAD",
                 "tier": 12,
-                "point": 34,
                 "status": 2,
-                "create_date": "Sun, 31 Dec 1899 00:00:00 GMT",
-                "create_user": 2,
-                "id_level": [1, 2]
-            }
+                "stages": [
+                    {
+                        "id_stage": 1,
+                        "stage_name": "stage 1",
+                        "illustration_link": "https://upload.wikimedia.org/wikipedia/commons/d/df/Open_sea_%28july_2021%29.jpg",
+                        "tier": 12,
+                        "point": 122,
+                        "is_completed": "true"
+                    },
+                    {
+                        "id_stage": 2,
+                        "stage_name": "stage 2",
+                        "illustration_link": "https://upload.wikimedia.org/wikipedia/commons/d/df/Open_sea_%28july_2021%29.jpg",
+                        "tier": 12,
+                        "point": 122,
+                        "is_completed": "true"
+                    },
+                    {
+                        "id_stage": 3,
+                        "stage_name": "stage 3",
+                        "illustration_link": "https://upload.wikimedia.org/wikipedia/commons/d/df/Open_sea_%28july_2021%29.jpg",
+                        "tier": 12,
+                        "point": 122,
+                        "is_completed": "true"
+                    }
+                ]
+            },
         ]
         return Response(data)
-
-    def post(self, request, *args, **kwargs):
-        return Response({"id": 3}, status=status.HTTP_200_OK)
-
-    # def put(self, request, *args, **kwargs):
-    #     return Response(status=status.HTTP_200_OK)
-
-    def delete(self, request, *args, **kwargs):
-        return Response(status=status.HTTP_204_NO_CONTENT)
 
 
 class IGoalsTestAPIView(APIView):
@@ -920,38 +473,21 @@ class IGoalsTestAPIView(APIView):
     def get(self, request, *args, **kwargs):
         data = [
             {
-                "id_stage": 1,
-                "stage_name": "Общие сведения",
-                "illustration_link": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fru.depositphotos.com%2Fstock-photos%2F%25D1%2580%25D0%25B0%25D0%25B1%25D0%25BE%25D1%2582%25D0%25B0-%25D0%25B2-%25D0%25B8%25D0%25BD%25D1%2582%25D0%25B5%25D1%2580%25D0%25BD%25D0%25B5%25D1%2582%25D0%25B5.html&psig=AOvVaw0MVUI_amjMnc32xcy1SKU2&ust=1638170544123000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCPi34PzCuvQCFQAAAAAdAAAAABAD",
+                "id_goal": 1,
+                "goal_name": "Цель 1",
+                "description": "Цель 1",
                 "tier": 12,
-                "point": 34,
-                "status": 2,
-                "create_date": "Sun, 31 Dec 1899 00:00:00 GMT",
-                "create_user": 2,
-                "id_level": [1, 2]
+                "is_completed": "true"
             },
             {
-                "id_stage": 1,
-                "stage_name": "Общие сведения",
-                "illustration_link": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fru.depositphotos.com%2Fstock-photos%2F%25D1%2580%25D0%25B0%25D0%25B1%25D0%25BE%25D1%2582%25D0%25B0-%25D0%25B2-%25D0%25B8%25D0%25BD%25D1%2582%25D0%25B5%25D1%2580%25D0%25BD%25D0%25B5%25D1%2582%25D0%25B5.html&psig=AOvVaw0MVUI_amjMnc32xcy1SKU2&ust=1638170544123000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCPi34PzCuvQCFQAAAAAdAAAAABAD",
+                "id_goal": 2,
+                "goal_name": "Цель 2",
+                "description": "Цель 2",
                 "tier": 12,
-                "point": 34,
-                "status": 2,
-                "create_date": "Sun, 31 Dec 1899 00:00:00 GMT",
-                "create_user": 2,
-                "id_level": [1, 2]
-            }
+                "is_completed": "true"
+            },
         ]
         return Response(data)
-
-    def post(self, request, *args, **kwargs):
-        return Response({"id": 3}, status=status.HTTP_200_OK)
-
-    # def put(self, request, *args, **kwargs):
-    #     return Response(status=status.HTTP_200_OK)
-
-    def delete(self, request, *args, **kwargs):
-        return Response(status=status.HTTP_204_NO_CONTENT)
 
 
 class IDocumentsTestAPIView(APIView):
@@ -959,38 +495,19 @@ class IDocumentsTestAPIView(APIView):
     def get(self, request, *args, **kwargs):
         data = [
             {
-                "id_stage": 1,
-                "stage_name": "Общие сведения",
-                "illustration_link": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fru.depositphotos.com%2Fstock-photos%2F%25D1%2580%25D0%25B0%25D0%25B1%25D0%25BE%25D1%2582%25D0%25B0-%25D0%25B2-%25D0%25B8%25D0%25BD%25D1%2582%25D0%25B5%25D1%2580%25D0%25BD%25D0%25B5%25D1%2582%25D0%25B5.html&psig=AOvVaw0MVUI_amjMnc32xcy1SKU2&ust=1638170544123000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCPi34PzCuvQCFQAAAAAdAAAAABAD",
+                "id_document": 1,
+                "document_name": "document 1",
+                "document_link": "https://upload.wikimedia.org/wikipedia/commons/d/df/Open_sea_%28july_2021%29.jpg",
                 "tier": 12,
-                "point": 34,
-                "status": 2,
-                "create_date": "Sun, 31 Dec 1899 00:00:00 GMT",
-                "create_user": 2,
-                "id_level": [1, 2]
             },
             {
-                "id_stage": 1,
-                "stage_name": "Общие сведения",
-                "illustration_link": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fru.depositphotos.com%2Fstock-photos%2F%25D1%2580%25D0%25B0%25D0%25B1%25D0%25BE%25D1%2582%25D0%25B0-%25D0%25B2-%25D0%25B8%25D0%25BD%25D1%2582%25D0%25B5%25D1%2580%25D0%25BD%25D0%25B5%25D1%2582%25D0%25B5.html&psig=AOvVaw0MVUI_amjMnc32xcy1SKU2&ust=1638170544123000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCPi34PzCuvQCFQAAAAAdAAAAABAD",
+                "id_document": 2,
+                "document_name": "document 2",
+                "document_link": "https://upload.wikimedia.org/wikipedia/commons/d/df/Open_sea_%28july_2021%29.jpg",
                 "tier": 12,
-                "point": 34,
-                "status": 2,
-                "create_date": "Sun, 31 Dec 1899 00:00:00 GMT",
-                "create_user": 2,
-                "id_level": [1, 2]
-            }
+            },
         ]
         return Response(data)
-
-    def post(self, request, *args, **kwargs):
-        return Response({"id": 3}, status=status.HTTP_200_OK)
-
-    # def put(self, request, *args, **kwargs):
-    #     return Response(status=status.HTTP_200_OK)
-
-    def delete(self, request, *args, **kwargs):
-        return Response(status=status.HTTP_204_NO_CONTENT)
 
 
 class IContactsTestAPIView(APIView):
@@ -998,38 +515,25 @@ class IContactsTestAPIView(APIView):
     def get(self, request, *args, **kwargs):
         data = [
             {
-                "id_stage": 1,
-                "stage_name": "Общие сведения",
-                "illustration_link": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fru.depositphotos.com%2Fstock-photos%2F%25D1%2580%25D0%25B0%25D0%25B1%25D0%25BE%25D1%2582%25D0%25B0-%25D0%25B2-%25D0%25B8%25D0%25BD%25D1%2582%25D0%25B5%25D1%2580%25D0%25BD%25D0%25B5%25D1%2582%25D0%25B5.html&psig=AOvVaw0MVUI_amjMnc32xcy1SKU2&ust=1638170544123000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCPi34PzCuvQCFQAAAAAdAAAAABAD",
-                "tier": 12,
-                "point": 34,
-                "status": 2,
-                "create_date": "Sun, 31 Dec 1899 00:00:00 GMT",
-                "create_user": 2,
-                "id_level": [1, 2]
+                "id_contact": 1,
+                "last_name": "Иванов",
+                "first_name": "Иван",
+                "middle_name": "Иванович",
+                "post": "менеджер по продажам",
+                "role": "какая-то роль",
+                "illustration": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fru.depositphotos.com%2Fstock-photos%2F%25D1%2580%25D0%25B0%25D0%25B1%25D0%25BE%25D1%2582%25D0%25B0-%25D0%25B2-%25D0%25B8%25D0%25BD%25D1%2582%25D0%25B5%25D1%2580%25D0%25BD%25D0%25B5%25D1%2582%25D0%25B5.html&psig=AOvVaw0MVUI_amjMnc32xcy1SKU2&ust=1638170544123000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCPi34PzCuvQCFQAAAAAdAAAAABAD",
             },
             {
-                "id_stage": 1,
-                "stage_name": "Общие сведения",
-                "illustration_link": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fru.depositphotos.com%2Fstock-photos%2F%25D1%2580%25D0%25B0%25D0%25B1%25D0%25BE%25D1%2582%25D0%25B0-%25D0%25B2-%25D0%25B8%25D0%25BD%25D1%2582%25D0%25B5%25D1%2580%25D0%25BD%25D0%25B5%25D1%2582%25D0%25B5.html&psig=AOvVaw0MVUI_amjMnc32xcy1SKU2&ust=1638170544123000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCPi34PzCuvQCFQAAAAAdAAAAABAD",
-                "tier": 12,
-                "point": 34,
-                "status": 2,
-                "create_date": "Sun, 31 Dec 1899 00:00:00 GMT",
-                "create_user": 2,
-                "id_level": [1, 2]
+                "id_contact": 2,
+                "last_name": "Андреев",
+                "first_name": "Андрей",
+                "middle_name": "Андреевич",
+                "post": "начальник отдела рекламы",
+                "role": "какая-то роль",
+                "illustration": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fru.depositphotos.com%2Fstock-photos%2F%25D1%2580%25D0%25B0%25D0%25B1%25D0%25BE%25D1%2582%25D0%25B0-%25D0%25B2-%25D0%25B8%25D0%25BD%25D1%2582%25D0%25B5%25D1%2580%25D0%25BD%25D0%25B5%25D1%2582%25D0%25B5.html&psig=AOvVaw0MVUI_amjMnc32xcy1SKU2&ust=1638170544123000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCPi34PzCuvQCFQAAAAAdAAAAABAD",
             }
         ]
         return Response(data)
-
-    def post(self, request, *args, **kwargs):
-        return Response({"id": 3}, status=status.HTTP_200_OK)
-
-    # def put(self, request, *args, **kwargs):
-    #     return Response(status=status.HTTP_200_OK)
-
-    def delete(self, request, *args, **kwargs):
-        return Response(status=status.HTTP_204_NO_CONTENT)
 
 
 class IBlocksTestAPIView(APIView):
@@ -1037,35 +541,16 @@ class IBlocksTestAPIView(APIView):
     def get(self, request, *args, **kwargs):
         data = [
             {
-                "id_stage": 1,
-                "stage_name": "Общие сведения",
-                "illustration_link": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fru.depositphotos.com%2Fstock-photos%2F%25D1%2580%25D0%25B0%25D0%25B1%25D0%25BE%25D1%2582%25D0%25B0-%25D0%25B2-%25D0%25B8%25D0%25BD%25D1%2582%25D0%25B5%25D1%2580%25D0%25BD%25D0%25B5%25D1%2582%25D0%25B5.html&psig=AOvVaw0MVUI_amjMnc32xcy1SKU2&ust=1638170544123000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCPi34PzCuvQCFQAAAAAdAAAAABAD",
+                "id_block": 1,
+                "block_name": "block 1",
+                "description": "description block 1",
                 "tier": 12,
-                "point": 34,
-                "status": 2,
-                "create_date": "Sun, 31 Dec 1899 00:00:00 GMT",
-                "create_user": 2,
-                "id_level": [1, 2]
             },
             {
-                "id_stage": 1,
-                "stage_name": "Общие сведения",
-                "illustration_link": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fru.depositphotos.com%2Fstock-photos%2F%25D1%2580%25D0%25B0%25D0%25B1%25D0%25BE%25D1%2582%25D0%25B0-%25D0%25B2-%25D0%25B8%25D0%25BD%25D1%2582%25D0%25B5%25D1%2580%25D0%25BD%25D0%25B5%25D1%2582%25D0%25B5.html&psig=AOvVaw0MVUI_amjMnc32xcy1SKU2&ust=1638170544123000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCPi34PzCuvQCFQAAAAAdAAAAABAD",
-                "tier": 12,
-                "point": 34,
-                "status": 2,
-                "create_date": "Sun, 31 Dec 1899 00:00:00 GMT",
-                "create_user": 2,
-                "id_level": [1, 2]
+                "id_block": 2,
+                "block_name": "block 2",
+                "description": "description block 3",
+                "tier": 15,
             }
         ]
         return Response(data)
-
-    def post(self, request, *args, **kwargs):
-        return Response({"id": 3}, status=status.HTTP_200_OK)
-
-    # def put(self, request, *args, **kwargs):
-    #     return Response(status=status.HTTP_200_OK)
-
-    def delete(self, request, *args, **kwargs):
-        return Response(status=status.HTTP_204_NO_CONTENT)
