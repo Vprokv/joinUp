@@ -1,8 +1,38 @@
 from django.urls import path
 
-from .views import ProgramTestAPIView
+from .views import (
+    ProgramTestAPIView,
+    AdaptationProgramTestAPIView,
+    AdaptationLevelTestAPIView,
+    AdaptationStageTestAPIView,
+    AdaptationBlockTestAPIView,
+    AdaptationGoalTestAPIView,
+    AdaptationDocumentTestAPIView,
+    AdaptationContactTestAPIView,
+    LnkLevelProgramTestAPIView,
+    LnkStageLevelTestAPIView,
+    LnkGoalProgramTestAPIView,
+    LnkDocumentProgramTestAPIView,
+    LnkContactProgramTestAPIView,
+    CustomerTestAPIView,
+    LicensePackTestAPIView,
+    UserServiceUserTestAPIView,
+    UserServiceSMSTestAPIView,
+    UserServiceTokenTestAPIView,
+    UserServiceCandidateTestAPIView,
+    EmployeeTestAPIView,
+    IEmployeeServiceAuthenticationTestAPIView,
+    RequestUserToken,
+    IAdaptationProgramTestAPIView,
+    ILevelStagesTestAPIView,
+    IGoalsTestAPIView,
+    IDocumentsTestAPIView,
+    IContactsTestAPIView,
+    IBlocksTestAPIView
+)
 
-urlpatterns = {  # http://127.0.0.1:8000/api/
+# http://127.0.0.1:8000/api/
+urlpatterns = {
     path('program/', ProgramTestAPIView.as_view(), name='program'),
     # Сервис old
     # IAdaptationProgramService
@@ -27,10 +57,10 @@ urlpatterns = {  # http://127.0.0.1:8000/api/
     path('userservice/token/', UserServiceTokenTestAPIView.as_view(), name='user service(token)'),
     path('userservice/candidate/', UserServiceCandidateTestAPIView.as_view(), name='candidate'),
     # IEmployeeService
-    path('employee/', EmployeTestAPIView.as_view(), name='candidate'),
+    path('employee/', EmployeeTestAPIView.as_view(), name='candidate'),
 
     #     Сервисы для мобильного
-    path('iemployeeserviceauthentification/', IEmployeeServiceAuthentificationTestAPIView.as_view(),
+    path('iemployeeserviceauthentification/', IEmployeeServiceAuthenticationTestAPIView.as_view(),
          name='service authentication'),
     path('requestusercandidatetoken/', RequestUserToken.as_view(), name='request user candidate token'),
     path('iadaptationprogram/', IAdaptationProgramTestAPIView.as_view(), name='i adaptation program'),
