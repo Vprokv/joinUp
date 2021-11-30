@@ -32,7 +32,7 @@ from .views import (
 )
 
 # http://127.0.0.1:8000/api/
-urlpatterns = {
+urlpatterns = [
     path('program/', ProgramTestAPIView.as_view(), name='program'),
     # Сервис old
     # IAdaptationProgramService
@@ -69,4 +69,4 @@ urlpatterns = {
     path('idocuments/', IDocumentsTestAPIView.as_view(), name='i documents'),
     path('icontacts/', IContactsTestAPIView.as_view(), name='i contacts'),
     path('iblocks/', IBlocksTestAPIView.as_view(), name='i blocks')
-}
+]
