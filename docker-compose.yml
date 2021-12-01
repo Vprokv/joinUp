@@ -9,6 +9,10 @@ services:
       - ./.database/postgres/data:/var/lib/postgresql/data
     ports:
       - "5430:5430"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=еуые
+      - POSTGRES_DB=postgres
   web:
     build: .
     command: python manage.py runserver 0.0.0.0:9000
